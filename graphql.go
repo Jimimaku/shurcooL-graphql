@@ -123,8 +123,12 @@ type errors []struct {
 // Error implements error interface.
 func (e errors) Error() string {
 	b := strings.Builder{}
-	for _, err := range e {
+	l := len(e)
+	for i, err := range e {
 		b.WriteString(fmt.Sprintf("Message: %s, Locations: %+v", err.Message, err.Locations))
+		if i != l-1 {
+			b.WriteString("\n")
+		}
 	}
 	return b.String()
 }
