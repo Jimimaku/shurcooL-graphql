@@ -2,11 +2,7 @@ name: Lint
 on: [push, pull_request]
 jobs:
   lint:
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        go: [1.16]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
