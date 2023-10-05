@@ -1,17 +1,13 @@
 graphql
 =======
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/shurcooL/graphql.svg)](https://pkg.go.dev/github.com/shurcooL/graphql)
-
-Package `graphql` provides a GraphQL client implementation.
-
-For more information, see package [`github.com/shurcooL/githubv4`](https://github.com/shurcooL/githubv4), which is a specialized version targeting GitHub GraphQL API v4. That package is driving the feature development.
+Package `graphql` provides a GraphQL client implementation, and is forked from `https://github.com/shurcooL/graphql`.
 
 Installation
 ------------
 
-```sh
-go get github.com/shurcooL/graphql
+```bash
+go get -u github.com/cli/shurcooL-graphql
 ```
 
 Usage
@@ -273,14 +269,6 @@ fmt.Printf("Created a %v star review: %v\n", m.CreateReview.Stars, m.CreateRevie
 // Output:
 // Created a 5 star review: This is a great movie!
 ```
-
-Directories
------------
-
-| Path                                                                                  | Synopsis                                                                                                        |
-|---------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [ident](https://pkg.go.dev/github.com/shurcooL/graphql/ident)                         | Package ident provides functions for parsing and converting identifier names between various naming convention. |
-| [internal/jsonutil](https://pkg.go.dev/github.com/shurcooL/graphql/internal/jsonutil) | Package jsonutil provides a function for decoding JSON into a GraphQL query data structure.                     |
 
 License
 -------
