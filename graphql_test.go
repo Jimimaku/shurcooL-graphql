@@ -3,7 +3,6 @@ package graphql_test
 import (
 	"context"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -144,7 +143,7 @@ func TestClient_Query_emptyVariables(t *testing.T) {
 			Name string
 		}
 	}
-	err := client.Query(context.Background(), &q, map[string]interface{}{})
+	err := client.Query(context.Background(), &q, map[string]any{})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -166,7 +165,7 @@ func (l localRoundTripper) RoundTrip(req *http.Request) (*http.Response, error) 
 }
 
 func mustRead(r io.Reader) string {
-	b, err := ioutil.ReadAll(r)
+	b, err := io.ReadAll(r)
 	if err != nil {
 		panic(err)
 	}
